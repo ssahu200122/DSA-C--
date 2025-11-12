@@ -32,18 +32,13 @@ int bookallocationProblemLinearSearch(vector<int> books,int students){
 int bookAllocationProblemBinarySearch(vector<int> books,int students){
     int low = *max_element(books.begin(),books.end());
     long high = accumulate(books.begin(),books.end(),0L);
-    int ans;
     while(low<=high){
         int mid = (low+high)/2;
         int required = numberOFStudent(books,mid);
-        if(students == required) {
-            ans = mid;
-            high = mid-1;
-        }
-        else if(students > required) high = mid-1;
+        if(students >= required)high = mid-1;
         else low = mid+1;
     }
-    return ans;
+    return low;
     
 }
 int main() {
