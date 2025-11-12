@@ -46,9 +46,7 @@ int bookAllocationProblemBinarySearch(vector<int> books,int students){
     return ans;
     
 }
-
 int main() {
-    
     vector<int> books = {25,46,28,49,24};
     cout<< bookallocationProblemLinearSearch(books,4)<<endl;
     cout<< bookAllocationProblemBinarySearch(books,4);
